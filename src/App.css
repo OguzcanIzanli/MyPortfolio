@@ -1,42 +1,96 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --line-color: #fff;
+  --bg: var(--line-color);
+}
+
+header {
+  background-color: #fff;
+  position: relative;
+}
+
+.bgDark {
+  background-color: #000;
+}
+
+.background {
+  position: absolute;
+  height: 100vh;
+  inset: 0;
+  --lines: repeating-linear-gradient(
+    100deg,
+    #fff 0%,
+    #fff 7%,
+    transparent 10%,
+    transparent 12%,
+    #fff 16%
+  );
+
+  --rainbow: repeating-linear-gradient(
+    100deg,
+    #60a5fa 10%,
+    #e879f9 15%,
+    #60a5fa 20%,
+    #5eead4 25%,
+    #60a5fa 30%
+  );
+  background-image: var(--lines), var(--rainbow);
+  background-size: 300%, 200%;
+
+  filter: blur(10px) invert(100%);
+
+  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 80%);
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--lines), var(--rainbow);
+  background-size: 200%, 100%;
+  animation: smoothBg 60s linear infinite;
+  mix-blend-mode: difference;
+}
+
+@keyframes smoothBg {
+  0% {
+    background-position: 50% 50%, 50% 50%;
+  }
+  100% {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.dark {
+  filter: blur(10px) opacity(50%) saturate(200%);
+  --lines: repeating-linear-gradient(
+    100deg,
+    #000 0%,
+    #000 7%,
+    transparent 10%,
+    transparent 12%,
+    #000 16%
+  );
+}
+
+.content {
+  font-size: 5rem;
+  height: 100vh;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-flow: column;
   text-align: center;
+  mix-blend-mode: difference;
+  filter: invert(1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.navbar {
+  position: fixed;
 }
