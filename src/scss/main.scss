@@ -1,20 +1,11 @@
 @use "./base/reset";
 @use "./base/colors" as *;
+
 @use "./components/background";
 @use "./components/logo";
 @use "./components/navbar";
+
+@use "./layout/hero";
 @use "./layout/about";
 @use "./layout/projects";
 @use "./layout/contact";
-
-.content {
-  font-size: 5rem;
-  height: 100vh;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  flex-flow: column;
-  text-align: center;
-  mix-blend-mode: difference;
-  filter: invert(1);
-}

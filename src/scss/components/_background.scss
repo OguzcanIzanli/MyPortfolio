@@ -20,13 +20,13 @@ $themes: (
   ),
 );
 
-@mixin backgroundSecondry($theme-name) {
+@mixin backgroundPrimary($theme-name) {
   $theme: map-get($themes, $theme-name);
   background-color: map-get($theme, color);
   // position: relative;
 }
 
-@mixin backgroundPrimary($theme-name) {
+@mixin animatedBackground($theme-name) {
   $theme: map-get($themes, $theme-name);
   position: absolute;
   width: 100%;
@@ -66,18 +66,18 @@ $themes: (
   }
 }
 
-.dark {
-  @include backgroundPrimary(dark);
+.darkAnimBg {
+  @include animatedBackground(dark);
 }
 
-.light {
-  @include backgroundPrimary(light);
+.lightAnimBg {
+  @include animatedBackground(light);
 }
 
 .darkBg {
-  @include backgroundSecondry(dark);
+  @include backgroundPrimary(dark);
 }
 
 .lightBg {
-  @include backgroundSecondry(light);
+  @include backgroundPrimary(light);
 }
