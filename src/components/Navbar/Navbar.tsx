@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className="containerNavbar">
       <div className={`navbar ${theme === "light" ? "lightNav" : "darkNav"}`}>
         <div className="logo">
-          <Logo size={1} zIndex={1} />
+          <Logo size={1.5} zIndex={1} />
         </div>
         <ul className="navBtns">
           <div

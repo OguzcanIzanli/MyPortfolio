@@ -23,6 +23,7 @@ $themes: (
 @mixin backgroundPrimary($theme-name) {
   $theme: map-get($themes, $theme-name);
   background-color: map-get($theme, color);
+
   // position: relative;
 }
 
@@ -31,7 +32,6 @@ $themes: (
   position: absolute;
   width: 100%;
   height: 100vh;
-
   $lines: repeating-linear-gradient(
     100deg,
     map-get($theme, color) 0%,

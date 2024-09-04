@@ -1,3 +1,6 @@
+@use "../base/colors" as *;
+
 #about {
   height: 100vh;
+  background-color: $base-color-5;
 }

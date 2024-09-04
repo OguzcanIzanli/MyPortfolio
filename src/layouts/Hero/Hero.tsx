@@ -1,4 +1,8 @@
 import { useTheme } from "../../context/ThemeContext";
+import IconGithub from "../../assets/icons/IconGithub";
+import IconLinkedin from "../../assets/icons/IconLinkedin";
+import IconLink from "../../assets/icons/IconLink";
+// import heroProfile from "../../assets/images/heroProfile.png";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -21,6 +25,22 @@ const Hero = () => {
             contributing to projects. I am currently looking for full-time job
             opportunities where I can grow as a developer.
           </p>
+
+          <div className="links">
+            <div className="social-media">
+              <a href="" className="github">
+                <IconGithub />
+              </a>
+              <a href="" className="linkedIn">
+                <IconLinkedin />
+              </a>
+            </div>
+
+            <a href="" className="resume">
+              <IconLink />
+              <span>resume</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
