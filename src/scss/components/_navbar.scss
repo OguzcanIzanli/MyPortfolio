@@ -1,0 +1,93 @@
+@use "../base/colors" as *;
+
+.containerNavbar {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  padding: 8px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  margin-bottom: 4px;
+}
+
+@mixin apply-nav-theme($theme) {
+  @if $theme == "light" {
+    background-color: $dark-2;
+    border: 3px solid $dark-1;
+  } @else if $theme == "dark" {
+    backdrop-filter: blur(12px);
+    border: 3px solid $base-color-5;
+  }
+}
+
+.navbar {
+  &.lightNav {
+    @include apply-nav-theme("light");
+  }
+
+  &.darkNav {
+    @include apply-nav-theme("dark");
+  }
+}
+
+.themeBtn {
+  cursor: pointer;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.themeBtn::after {
+  content: "";
+  margin-left: 15px;
+  width: 3px;
+  height: 85%;
+  background-color: #fff;
+}
+
+.navBtns {
+  display: flex;
+  gap: 24px;
+}
+
+.navBtns li {
+  display: flex;
+  align-items: center;
+}
+
+.navBtn {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  line-height: 32px;
+  color: $white;
+  -webkit-text-stroke: 1px var(--clr);
+  filter: invert(0);
+  padding-bottom: 4px;
+}
+
+.navBtn::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  // border-right: 4px solid var(--clr);
+}
+
+.navBtn:hover::before {
+  width: 100%;
+  filter: drop-shadow(0 0 16px var(--clr));
+}
