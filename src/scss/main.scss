@@ -1,0 +1,83 @@
+@use "./base/reset";
+@use "./base/colors" as *;
+@use "./components/background";
+@use "./layout/about";
+@use "./layout/projects";
+@use "./layout/contact";
+
+.containerNavbar {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  padding: 8px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border: 3px solid $dark-1;
+  background-color: $dark-2;
+  border-radius: 24px;
+}
+
+.content {
+  font-size: 5rem;
+  height: 100vh;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-flow: column;
+  text-align: center;
+  mix-blend-mode: difference;
+  filter: invert(1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.iconStar {
+  font-size: 48px;
+  color: $base-color-4;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  gap: 24px;
+}
+
+ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+ul li a {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 32px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  line-height: 32px;
+  color: $white;
+  -webkit-text-stroke: 1px var(--clr);
+  filter: invert(0);
+  padding-bottom: 4px;
+}
+
+ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  // border-right: 4px solid var(--clr);
+}
+
+ul li a:hover::before {
+  width: 100%;
+  filter: drop-shadow(0 0 16px var(--clr));
+}

@@ -1,0 +1,83 @@
+@use "../base/colors" as *;
+
+$rainbow-gradient: repeating-linear-gradient(
+  100deg,
+  $base-color-1 10%,
+  $base-color-2 15%,
+  $base-color-1 20%,
+  $base-color-3 25%,
+  $base-color-1 30%
+);
+
+$themes: (
+  light: (
+    color: $white,
+    filter: blur(10px) opacity(100%) invert(100%),
+  ),
+  dark: (
+    color: $dark-1,
+    filter: blur(10px) opacity(50%) saturate(200%),
+  ),
+);
+
+@mixin backgroundSecondry($theme-name) {
+  $theme: map-get($themes, $theme-name);
+  background-color: map-get($theme, color);
+  // position: relative;
+}
+
+@mixin backgroundPrimary($theme-name) {
+  $theme: map-get($themes, $theme-name);
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  $lines: repeating-linear-gradient(
+    100deg,
+    map-get($theme, color) 0%,
+    map-get($theme, color) 7%,
+    transparent 10%,
+    transparent 12%,
+    map-get($theme, color) 16%
+  );
+
+  background-image: $lines, $rainbow-gradient;
+  background-size: 300%, 200%;
+  mask-image: radial-gradient(ellipse at 100% 0%, $dark-1 40%, transparent 70%);
+  filter: map-get($theme, filter);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: $lines, $rainbow-gradient;
+    background-size: 200%, 100%;
+    animation: smoothBg 60s linear infinite;
+    mix-blend-mode: difference;
+  }
+}
+
+@keyframes smoothBg {
+  0% {
+    background-position: 50% 50%, 50% 50%;
+  }
+  100% {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.dark {
+  @include backgroundPrimary(dark);
+}
+
+.light {
+  @include backgroundPrimary(light);
+}
+
+.darkBg {
+  @include backgroundSecondry(dark);
+}
+
+.lightBg {
+  @include backgroundSecondry(light);
+}
