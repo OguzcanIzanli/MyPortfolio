@@ -30,7 +30,9 @@ const Navbar = () => {
           {menuItems.map((item, index) => (
             <li
               key={index}
-              style={{ "--clr": item.color } as React.CSSProperties}
+              style={
+                { "--clr": item.color, "--delay": index } as React.CSSProperties
+              }
             >
               <a
                 className={`navBtn ${

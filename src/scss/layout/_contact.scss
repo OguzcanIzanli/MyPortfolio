@@ -1,5 +1,9 @@
 @use "../base/colors" as *;
 
-#contact {
-  height: 100vh;
+.contactContainer {
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  background-color: $base-color-5;
+  flex-direction: column;
 }

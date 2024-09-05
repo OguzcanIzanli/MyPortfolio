@@ -1,9 +1,15 @@
 @use "../base/colors" as *;
+@use "../abstracts/animations";
+
+.hero-container {
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+}
 
 .hero-content {
-  width: 80%;
   height: auto;
-  padding: 200px 0 300px 0;
+  padding: 200px 0 340px 0;
   position: relative;
 
   h3,
@@ -15,18 +21,27 @@
 
   h3 {
     font-size: 48px;
+    opacity: 0;
+    animation: slideBottom 1s ease 1s forwards;
   }
 
   h3:nth-of-type(2) {
     margin-bottom: 32px;
+    opacity: 0;
+    animation: slideTop 1s ease 1s forwards;
   }
 
   h1 {
     font-size: 64px;
+    opacity: 0;
+    animation: slideRight 1s ease 1.5s forwards;
   }
 
   p {
     font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease 1.5s forwards;
+    line-height: 40px;
   }
 
   .links {
@@ -43,10 +58,12 @@
         height: 50px;
         border-radius: 50%;
         border: 2px solid;
-        margin: 30px 15px 30px 0;
+        margin: 50px 15px 50px 0;
         transition: 0.4s ease;
         color: $base-color-3;
         cursor: pointer;
+        opacity: 0;
+        animation: slideLeft 1s ease calc(1.8s + 0.2s * var(--delay)) forwards;
       }
 
       a:hover {
@@ -68,6 +85,8 @@
       border-radius: 32px;
       border: 3px solid $base-color-3;
       transition: 0.4s ease;
+      opacity: 0;
+      animation: slideTop 1s ease 2.6s forwards;
     }
 
     .resume:hover {

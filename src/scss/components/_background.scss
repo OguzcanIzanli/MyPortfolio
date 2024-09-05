@@ -31,7 +31,7 @@ $themes: (
   $theme: map-get($themes, $theme-name);
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 800px;
   $lines: repeating-linear-gradient(
     100deg,
     map-get($theme, color) 0%,

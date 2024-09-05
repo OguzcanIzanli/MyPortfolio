@@ -1,4 +1,5 @@
 @use "../base/colors" as *;
+@use "../abstracts/animations";
 
 .containerNavbar {
   width: 100%;
@@ -46,6 +47,10 @@
   font-size: 32px;
   display: flex;
   align-items: center;
+
+  svg {
+    animation: slideRight 1s ease;
+  }
 }
 
 .themeBtn::after {
@@ -54,6 +59,7 @@
   width: 3px;
   height: 85%;
   background-color: #fff;
+  animation: slideBottom 1s ease;
 }
 
 .navBtns {
@@ -64,6 +70,8 @@
 .navBtns li {
   display: flex;
   align-items: center;
+  opacity: 0;
+  animation: slideTop 1s ease calc(0.2s * var(--delay)) forwards;
 }
 
 .navBtn {

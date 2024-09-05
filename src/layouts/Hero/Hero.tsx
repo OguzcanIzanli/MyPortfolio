@@ -13,7 +13,7 @@ const Hero = () => {
         className={`${theme === "light" ? "lightAnimBg" : "darkAnimBg"}`}
       ></div>
 
-      <div className="container">
+      <div className="hero-container">
         <div className="hero-content">
           <h3>Hello!</h3>
           <h1>I'm Oguzcan Izanli</h1>
@@ -28,10 +28,18 @@ const Hero = () => {
 
           <div className="links">
             <div className="social-media">
-              <a href="" className="github">
+              <a
+                href=""
+                style={{ "--delay": 1 } as React.CSSProperties}
+                className="github"
+              >
                 <IconGithub />
               </a>
-              <a href="" className="linkedIn">
+              <a
+                href=""
+                style={{ "--delay": 2 } as React.CSSProperties}
+                className="linkedIn"
+              >
                 <IconLinkedin />
               </a>
             </div>

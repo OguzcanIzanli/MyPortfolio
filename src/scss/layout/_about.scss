@@ -1,6 +1,49 @@
 @use "../base/colors" as *;
 
-#about {
-  height: 100vh;
+.aboutContainer {
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
   background-color: $base-color-5;
+  flex-direction: column;
+
+  .layoutTitle {
+    margin-bottom: 50px;
+    font-size: 48px;
+  }
+
+  .aboutContent {
+    display: flex;
+    gap: 10%;
+
+    .profileImage {
+      img {
+        width: 350px;
+      }
+    }
+
+    .aboutMe {
+      .name {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 32px;
+      }
+
+      .coverLetter {
+        font-size: 24px;
+        text-align: justify;
+        line-height: 40px;
+      }
+
+      .skills {
+        margin: 40px 0;
+        display: flex;
+        gap: 40px;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
 }
