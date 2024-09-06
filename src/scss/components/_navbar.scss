@@ -1,6 +1,15 @@
 @use "../base/colors" as *;
 @use "../abstracts/animations";
 
+.construction {
+  margin-left: 50px;
+  padding: 0 8px;
+  font-size: 1.5rem;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
 .containerNavbar {
   width: 100%;
   position: fixed;

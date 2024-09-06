@@ -18,6 +18,7 @@ const Navbar = () => {
       <div className={`navbar ${theme === "light" ? "lightNav" : "darkNav"}`}>
         <div className="logo">
           <Logo size={1.5} zIndex={1} />
+          <div className="construction">Under construction!</div>
         </div>
         <ul className="navBtns">
           <div
