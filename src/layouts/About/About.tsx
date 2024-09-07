@@ -46,7 +46,14 @@ const About = () => {
 
           <div className="skills">
             {skills.map((skill, index) => (
-              <img key={index} src={skill} alt={skill} />
+              <div className="skill">
+                <img
+                  style={{ "--delay": index } as React.CSSProperties}
+                  key={index}
+                  src={skill}
+                  alt={skill}
+                />
+              </div>
             ))}
           </div>
         </div>
