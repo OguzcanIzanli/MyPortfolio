@@ -1,18 +1,30 @@
 import projects from "../../data/projects";
 import IconGithub from "../../assets/icons/IconGithub";
 import IconWebsite from "../../assets/icons/IconWebsite";
-
 import Technologies from "../../components/Technologies";
+import { useState } from "react";
+import IconChevronsDown from "../../assets/icons/IconChevronsDown";
 
 const Projects = () => {
+  const [viewProjects, setViewProjects] = useState(false);
+
   return (
     <div id="projects" className="projects-container">
       <h1 className="layoutTitle">Projects</h1>
 
-      <div className="card-container">
+      <div
+        className={`card-container ${
+          viewProjects ? "card-showall" : "card-showless"
+        }`}
+      >
         {projects.map((project) => (
           <div key={project.name} className="project-card">
-            <div className="project-name">{project.name}</div>
+            <div
+              style={{ "--color": project.color } as React.CSSProperties}
+              className="face face-title"
+            >
+              <div className="project-name">{project.name}</div>
+            </div>
             <div className="face face-up">
               <div
                 style={
@@ -58,6 +70,12 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      <button
+        onClick={() => setViewProjects(!viewProjects)}
+        className="view-btn"
+      >
+        <IconChevronsDown className={viewProjects ? "rotate180deg" : ""} />
+      </button>
     </div>
   );
 };
