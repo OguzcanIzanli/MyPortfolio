@@ -1,5 +1,4 @@
 import projects from "../../data/projects";
-import aaaasd from "../../assets/images/projects/vett-app.png";
 
 const Projects = () => {
   console.log(projects);
