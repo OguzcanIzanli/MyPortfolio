@@ -1,4 +1,5 @@
 import projects from "../../data/projects";
+import aaaasd from "../../assets/images/projects/vett-app.png";
 
 const Projects = () => {
   console.log(projects);
@@ -11,7 +12,7 @@ const Projects = () => {
           <div key={project.name} className="card">
             <div className="projectName">{project.name}</div>
             <div className="face face1">
-              <div
+              <img
                 style={
                   {
                     background: project.media,
@@ -19,7 +20,7 @@ const Projects = () => {
                   } as React.CSSProperties
                 }
                 className="content"
-              ></div>
+              ></img>
             </div>
             <div className="face face2">
               <div className="content">
