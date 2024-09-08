@@ -15,7 +15,7 @@ const Projects = () => {
                 style={
                   {
                     background: project.media,
-                    backgroundSize: "cover",
+                    backgroundSize: "contain",
                   } as React.CSSProperties
                 }
                 className="content"

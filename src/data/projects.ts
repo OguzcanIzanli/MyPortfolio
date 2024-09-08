@@ -5,7 +5,7 @@ const projects = [
       "This project is a management system developed for a veterinary clinic. The system allows performing CRUD (Create, Read, Update, Delete) operations with a live backend and database for animals, customers, doctors, appointments, reports, and vaccines.",
     live: "https://myveterinaryapp.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Vet-App",
-    media: "url(../../../public/projects/vett-app.png)",
+    media: "url(../../src/assets/images/projects/vett-app.png)",
   },
   {
     name: "Sport Center",
@@ -13,7 +13,7 @@ const projects = [
       "Sport Center is a responsive web page created with React, designed to fit to screen sizes of 576px and 768px. The web page features a navbar that allows smooth navigation between different sections, each offering unique features. Users can explore various sections such as classes, BMI calculator, trainers, purchase options, reviews, contact, and footer.",
     live: "https://powerfullsportcenterreact.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Sport-Center-React",
-    media: "url(../../../public/projects/sport-center.png)",
+    media: "url(../../src/assets/images/projects/sport-center.png)",
   },
   {
     name: "Question App",
@@ -21,7 +21,7 @@ const projects = [
       "This is a Question App built with React.js that provides an interactive quiz experience. Users can start the quiz, answer questions sequentially, and view their results at the end. The app utilizes custom hooks, the Context API for state management, and a ThemeContext to toggle between light and dark themes.",
     live: "https://reactquestionapp.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Question-App",
-    media: "url(../../../public/projects/question-app.png)",
+    media: "url(../../src/assets/images/projects/question-app.png)",
   },
   {
     name: "Spend Bill Gates' Money",
@@ -29,7 +29,7 @@ const projects = [
       "Spend Bill Gates' Money is an online simulation or game where players are given virtual money, and they can use it to purchase various items in a virtual shopping experience. This project used technologies such as React, TypeScript, CSS, and Context API.",
     live: "https://billgatesmoney.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Spend-Bill-Gates-Money",
-    media: "url(../../../public/projects/bill-gates.png)",
+    media: "url(../../src/assets/images/projects/bill-gates.png)",
   },
   {
     name: "Star Wars Ships",
@@ -37,7 +37,7 @@ const projects = [
       "Star Wars Ships is a web application that allows users to explore various starships from the Star Wars universe. Users can browse through a list of starships, filter them by name or model, and view detailed information about each ship. The application fetches data from the Star Wars API (SWAPI) and displays it in an interactive and user-friendly interface.",
     live: "https://starwarships.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Star-Wars-Ships",
-    media: "url(../../../public/projects/star-wars-ships.png)",
+    media: "url(../../src/assets/images/projects/star-wars-ships.png)",
   },
   {
     name: "Pop The Ball Game",
@@ -45,7 +45,7 @@ const projects = [
       "Pop The Ball Game is a simple web-based game created using basic HTML, CSS, and vanilla JavaScript. In this game, players attempt to reduce the health of the escaping ball by clicking on it. The game features different difficulty levels and keeps players' time scores using local storage.",
     live: "https://poptheball.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Pop-The-Ball-Game",
-    media: "url(../../../public/projects/pop-the-ball.png)",
+    media: "url(../../src/assets/images/projects/pop-the-ball.png)",
   },
   {
     name: "To-Do List App",
@@ -53,7 +53,7 @@ const projects = [
       "This project is a simple to-do list application built using React. It allows users to create, edit, and delete to-do list items. The application integrates a mock API to simulate backend functionality for storing and retrieving to-do list data. Users can access their to-do lists by entering their name on the login screen. Additionally, it includes toast messages to provide feedback for successful operations such as adding, updating, or deleting tasks.",
     live: "https://logintodoapp.netlify.app/",
     github: "https://github.com/OguzcanIzanli/To-Do-App",
-    media: "url(../../../public/projects/to-do-app.png)",
+    media: "url(../../src/assets/images/projects/to-do-app.png)",
   },
   {
     name: "Patika+ Front-End Projects",
@@ -61,7 +61,7 @@ const projects = [
       "This repository contains a collection of 21 web development projects showcasing various technologies such as JavaScript, HTML, CSS, and Bootstrap. Each project offers a unique demonstration of web development skills and concepts.",
     live: "https://patikafrontendprojects.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Patika-Front-End-Projects",
-    media: "url(../../../public/projects/frontend-projects.png)",
+    media: "url(../../src/assets/images/projects/frontend-projects.png)",
   },
 ];
 
