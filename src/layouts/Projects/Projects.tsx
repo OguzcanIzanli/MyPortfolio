@@ -1,35 +1,46 @@
 import projects from "../../data/projects";
+import IconGithub from "../../assets/icons/IconGithub";
+import IconWebsite from "../../assets/icons/IconWebsite";
 
 const Projects = () => {
   console.log(projects);
   return (
-    <div id="projects" className="projectsContainer">
+    <div id="projects" className="projects-container">
       <h1 className="layoutTitle">Projects</h1>
 
-      <div className="cardContainer">
+      <div className="card-container">
         {projects.map((project) => (
-          <div key={project.name} className="card">
-            <div className="projectName">{project.name}</div>
-            <div className="face face1">
-              <img
+          <div key={project.name} className="project-card">
+            <div className="project-name">{project.name}</div>
+            <div className="face face-up">
+              <div
                 style={
                   {
                     background: project.media,
                     backgroundSize: "contain",
                   } as React.CSSProperties
                 }
-                className="content"
-              ></img>
+                className="project-image"
+              ></div>
             </div>
-            <div className="face face2">
+            <div
+              style={{ "--color": project.bgColor } as React.CSSProperties}
+              className="face face-down"
+            >
               <div className="content">
                 <p>{project.description}</p>
-                <a href={project.github} target="_blank">
-                  Github
-                </a>
-                <a href={project.live} target="_blank">
-                  Live
-                </a>
+                <div className="project-links">
+                  <a href={project.github} target="_blank">
+                    <span>
+                      <IconGithub /> GitHub
+                    </span>
+                  </a>
+                  <a href={project.live} target="_blank">
+                    <span>
+                      <IconWebsite /> Live
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ const projects = [
     live: "https://myveterinaryapp.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Vet-App",
     media: "url(/projects/vett-app.png)",
+    bgColor: "#E9E7F3",
   },
   {
     name: "Sport Center",
@@ -14,6 +15,7 @@ const projects = [
     live: "https://powerfullsportcenterreact.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Sport-Center-React",
     media: "url(/projects/sport-center.png)",
+    bgColor: "#F7DAA4",
   },
   {
     name: "Question App",
@@ -22,6 +24,7 @@ const projects = [
     live: "https://reactquestionapp.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Question-App",
     media: "url(/projects/question-app.png)",
+    bgColor: "#A4AFB8",
   },
   {
     name: "Spend Bill Gates' Money",
@@ -30,6 +33,7 @@ const projects = [
     live: "https://billgatesmoney.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Spend-Bill-Gates-Money",
     media: "url(/projects/bill-gates.png)",
+    bgColor: "#C0ECE8",
   },
   {
     name: "Star Wars Ships",
@@ -38,6 +42,7 @@ const projects = [
     live: "https://starwarships.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Star-Wars-Ships",
     media: "url(/projects/star-wars-ships.png)",
+    bgColor: "#8E8E94",
   },
   {
     name: "Pop The Ball Game",
@@ -46,6 +51,7 @@ const projects = [
     live: "https://poptheball.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Pop-The-Ball-Game",
     media: "url(/projects/pop-the-ball.png)",
+    bgColor: "#FFF6EB",
   },
   {
     name: "To-Do List App",
@@ -54,6 +60,7 @@ const projects = [
     live: "https://logintodoapp.netlify.app/",
     github: "https://github.com/OguzcanIzanli/To-Do-App",
     media: "url(/projects/to-do-app.png)",
+    bgColor: "#FFFAF2",
   },
   {
     name: "Patika+ Front-End Projects",
@@ -62,6 +69,7 @@ const projects = [
     live: "https://patikafrontendprojects.netlify.app/",
     github: "https://github.com/OguzcanIzanli/Patika-Front-End-Projects",
     media: "url(/projects/frontend-projects.png)",
+    bgColor: "#99CBCD",
   },
 ];
 
