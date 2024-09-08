@@ -32,27 +32,23 @@ const About = () => {
         <div className="aboutMe">
           <h3 className="name">Oguzcan Izanli</h3>
           <p className="coverLetter">
-            With a solid background in chemical engineering and strong skills in
-            front-end development, I am determined to succeed in this field.
-            Skilled in <span>HTML</span>, <span>CSS</span>,{" "}
-            <span>JavaScript</span>, <span>TypeScript</span>, and{" "}
-            <span>React</span>, I am prepared to face new challenges. My
-            previous experience has improved my project management and teamwork
-            abilities, providing a strong foundation for success in my new
-            career. With a passion for creating engaging user experiences, I am
-            excited to leverage my diverse background and technical skills to
-            contribute meaningfully to front-end development projects.
+            <span>
+              With a solid background in chemical engineering and strong skills
+              in front-end development, I am determined to succeed in this
+              field. Skilled in HTML, CSS, JavaScript, TypeScript, and React, I
+              am prepared to face new challenges. My previous experience has
+              improved my project management and teamwork abilities, providing a
+              strong foundation for success in my new career. With a passion for
+              creating engaging user experiences, I am excited to leverage my
+              diverse background and technical skills to contribute meaningfully
+              to front-end development projects.
+            </span>
           </p>
 
           <div className="skills">
             {skills.map((skill, index) => (
               <div className="skill">
-                <img
-                  style={{ "--delay": index } as React.CSSProperties}
-                  key={index}
-                  src={skill}
-                  alt={skill}
-                />
+                <img key={index} src={skill} alt={skill} />
               </div>
             ))}
           </div>

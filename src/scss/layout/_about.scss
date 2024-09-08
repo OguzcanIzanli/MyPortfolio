@@ -7,11 +7,6 @@
   background-color: $base-color-5;
   flex-direction: column;
 
-  .layoutTitle {
-    margin-bottom: 50px;
-    font-size: 48px;
-  }
-
   .aboutContent {
     display: flex;
     gap: 10%;
@@ -33,14 +28,23 @@
         font-size: 32px;
       }
 
-      .coverLetter {
+      .coverLetter span {
         font-size: 24px;
-        text-align: justify;
         line-height: 40px;
-
-        span {
-          font-weight: 700;
-        }
+        color: transparent;
+        background-image: linear-gradient(
+          to right,
+          $base-color-1,
+          $base-color-4
+        );
+        font-weight: 500;
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        background-clip: text;
+        animation: text-animation 2s linear forwards;
+        animation-timeline: view();
+        animation-range-start: 20vh;
+        animation-range-end: 50vh;
       }
 
       .skills {
@@ -56,9 +60,6 @@
           position: relative;
           margin: 8px 0;
           transition: all 0.5s;
-
-          img:hover {
-          }
         }
 
         .skill:hover {
@@ -74,50 +75,60 @@
           bottom: 0;
           left: 50%;
           border-radius: 50%;
-          transform: translate(-50%, 10px);
+          transform: translate(-50%, 16px);
           transition: all 0.5s;
         }
 
         .skill:hover::after {
           width: 80%;
           height: 8px;
-          transform: translate(-50%, 18px);
+          transform: translate(-50%, 24px);
         }
       }
     }
   }
 }
 
-@keyframes up-down {
+@keyframes text-animation {
   0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
+    background-size: 0%;
   }
 
   100% {
-    transform: translateY(0);
+    background-size: 100%;
   }
 }
 
-@keyframes shadoww {
-  0% {
-    width: 100%;
-    height: 10px;
-  }
+// @keyframes up-down {
+//   0% {
+//     transform: translateY(0);
+//   }
 
-  50% {
-    width: 80%;
-    height: 8px;
-  }
+//   50% {
+//     transform: translateY(-8px);
+//   }
 
-  100% {
-    width: 100%;
-    height: 10px;
-  }
-}
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes shadoww {
+//   0% {
+//     width: 100%;
+//     height: 10px;
+//   }
+
+//   50% {
+//     width: 80%;
+//     height: 8px;
+//   }
+
+//   100% {
+//     width: 100%;
+//     height: 10px;
+//   }
+// }
 
 @keyframes border-animation {
   0%,

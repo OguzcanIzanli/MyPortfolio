@@ -1,3 +1,5 @@
+@use "../base/colors" as *;
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +13,12 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.layoutTitle {
+  margin-bottom: 50px;
+  font-size: 48px;
+  color: transparent;
+  background: linear-gradient(to right, $base-color-1, $base-color-3);
+  background-clip: text;
 }
