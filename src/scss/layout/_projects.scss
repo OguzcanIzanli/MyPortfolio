@@ -15,24 +15,26 @@
     .project-card {
       position: relative;
       cursor: pointer;
-      height: 470px;
+      height: 550px;
 
       .project-name {
-        color: $dark-3;
+        color: $white;
         position: absolute;
         left: 50%;
-        top: 8%;
-        width: 400px;
-        font-size: 24px;
+        top: 14%;
+        width: 500px;
+        font-size: 28px;
         text-align: center;
         transform: translateX(-50%);
         font-weight: 600;
+        background-image: linear-gradient(44deg, #6c22bd, #f55195 50%, #e1cd60);
+        border-radius: 8px;
       }
 
       .face {
         transition: 0.3s;
-        width: 450px;
-        height: 220px;
+        width: 500px;
+        height: 250px;
         position: relative;
         display: flex;
         align-items: center;
@@ -40,12 +42,12 @@
 
       .face.face-up {
         z-index: 3;
-        transform: translateY(115px);
+        transform: translateY(150px);
 
         .project-image {
-          width: 450px;
-          height: 230px;
-          border-radius: 16px;
+          width: 500px;
+          height: 250px;
+          border-radius: 8px;
           transition: 0.3s;
 
           &::after {
@@ -70,28 +72,103 @@
       }
 
       &:hover .face.face-up .project-image {
-        border-radius: 16px 16px 0 0;
+        border-radius: 8px 8px 0 0;
       }
 
       &:hover .face.face-down {
         transform: translateY(0);
-        height: 270px;
-        border-radius: 0 0 16px 16px;
+        height: 300px;
+        border-radius: 0 0 8px 8px;
         filter: drop-shadow(0 0 25px var(--color));
       }
 
       .face.face-down {
         background: var(--color);
-        border-radius: 16px;
+        border-radius: 8px;
         justify-content: center;
-        padding: 0 16px;
         transform: translateY(-100px);
         overflow: hidden;
 
         .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 300px;
+          padding: 16px;
+
+          .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 500;
+
+            .technology {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+              padding: 2px 6px;
+              border-radius: 8px;
+              color: $white;
+            }
+
+            .react {
+              background: #58c4dc;
+            }
+
+            .typescript {
+              background: #377cc8;
+            }
+
+            .contextapi {
+              background: $base-color-3;
+            }
+
+            .hooks {
+              background: #a04747;
+            }
+
+            .responsive {
+              background: linear-gradient(
+                to right,
+                #6c22bd,
+                #f55195 50%,
+                #e1cd60
+              );
+            }
+
+            .reactrouter {
+              background: #f44250;
+            }
+
+            .materialui {
+              background: #0073e6;
+            }
+
+            .reactquery {
+              background: linear-gradient(to right, #f04842, #f59d0d);
+            }
+
+            .api {
+              background: #00712d;
+            }
+
+            .themetoggle {
+              background: linear-gradient(to right, #f7e025, #1c2f78);
+            }
+
+            .javascript {
+              background: #efd81d;
+            }
+
+            .bootstrap {
+              background: #6e2bf4;
+            }
+          }
+
           p {
             text-align: justify;
-            font-size: 14px;
+            font-size: 15px;
           }
 
           .project-links {

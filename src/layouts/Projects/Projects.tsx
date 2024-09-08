@@ -2,8 +2,9 @@ import projects from "../../data/projects";
 import IconGithub from "../../assets/icons/IconGithub";
 import IconWebsite from "../../assets/icons/IconWebsite";
 
+import Technologies from "../../components/Technologies";
+
 const Projects = () => {
-  console.log(projects);
   return (
     <div id="projects" className="projects-container">
       <h1 className="layoutTitle">Projects</h1>
@@ -24,10 +25,21 @@ const Projects = () => {
               ></div>
             </div>
             <div
-              style={{ "--color": project.bgColor } as React.CSSProperties}
+              style={{ "--color": project.color } as React.CSSProperties}
               className="face face-down"
             >
               <div className="content">
+                <div className="technologies">
+                  {project.technologies.map((technology) => (
+                    <div
+                      key={technology}
+                      className={`technology ${technology.toLowerCase()}`}
+                    >
+                      <Technologies technology={technology} /> {technology}
+                    </div>
+                  ))}
+                </div>
+
                 <p>{project.description}</p>
                 <div className="project-links">
                   <a href={project.github} target="_blank">

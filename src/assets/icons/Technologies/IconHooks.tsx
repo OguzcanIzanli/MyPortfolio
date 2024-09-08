@@ -1,4 +1,4 @@
-function IconHook(props: React.SVGProps<SVGSVGElement>) {
+function IconHooks(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -12,4 +12,4 @@ function IconHook(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default IconHook;
+export default IconHooks;
