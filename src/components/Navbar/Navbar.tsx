@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <div className={`navbar-container ${expandNavbar}`}>
       <div className={`navbar ${theme ? "light-nav" : "dark-nav"}`}>
-        <a href="home" className="logo">
+        <a href="#home" className="logo">
           <Logo size={1.5} zIndex={1} />
           <div className="construction">Under construction!</div>
         </a>

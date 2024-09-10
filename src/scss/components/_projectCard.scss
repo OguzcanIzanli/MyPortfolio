@@ -1,0 +1,164 @@
+@use "../base/colors" as *;
+@use "../abstracts/mixins" as *;
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  transition: all 3s;
+  margin-bottom: 130px;
+
+  .project-card {
+    position: relative;
+    height: 250px;
+    margin-bottom: 100px;
+    transition: all 3s;
+
+    &:hover {
+      z-index: 3;
+    }
+
+    .face {
+      transition: 0.3s;
+      width: 500px;
+      aspect-ratio: 2;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .face.face-title {
+      position: absolute;
+      transform: translateY(0);
+      background: rgba(22, 21, 37, 0.5);
+      backdrop-filter: blur(1px);
+      z-index: 2;
+      height: 100%;
+
+      border-radius: 8px;
+      justify-content: center;
+      font-size: 28px;
+      transition: 0.6s;
+
+      .project-name {
+        background-color: var(--color);
+        color: $dark-1;
+        padding: 4px 8px;
+        border-radius: 16px;
+        filter: drop-shadow(0 0 5px var(--color));
+        font-weight: 600;
+      }
+    }
+
+    &:hover .face.face-title {
+      transform: translateY(-400%);
+      height: 20%;
+      border-radius: 8px 8px 0 0;
+      background-color: var(--color);
+      color: $dark-1;
+
+      .project-name {
+        filter: none;
+      }
+    }
+
+    .face.face-up {
+      z-index: 1;
+      transform: translateY(0);
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+    }
+
+    &:hover .face.face-up {
+      transform: translateY(-60%);
+    }
+
+    &:hover .face.face-up .project-image {
+      border-radius: 0;
+    }
+
+    .face-down {
+      background: var(--color);
+      border-radius: 8px;
+      justify-content: center;
+      transform: translateY(-100%);
+      overflow: hidden;
+
+      aspect-ratio: 2;
+      transition: 0.3s;
+      width: 500px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px;
+
+        p {
+          text-align: justify;
+          font-size: 15px;
+        }
+
+        .project-links {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          margin-top: 16px;
+
+          a {
+            width: 40%;
+            background-image: linear-gradient(
+              45deg,
+              #12c2e9,
+              #c471ed 50%,
+              #f64f59
+            );
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            color: $white;
+            font-size: 16px;
+            padding: 3px;
+
+            span {
+              background-color: $dark-1;
+              padding: 4px 0;
+              border-radius: 8px;
+              width: 100%;
+              transition: 300ms;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+            }
+
+            &:hover span {
+              background: none;
+            }
+
+            &:active {
+              filter: brightness(1.25);
+            }
+          }
+        }
+      }
+    }
+    &:hover .face-down {
+      transform: translateY(-150px);
+      aspect-ratio: 0;
+      height: auto;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+}

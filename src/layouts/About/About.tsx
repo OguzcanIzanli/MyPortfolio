@@ -51,8 +51,8 @@ const About = () => {
         </div>
         <div className="skills">
           {skills.map((skill, index) => (
-            <div className="skill">
-              <img key={index} src={skill} alt={skill} />
+            <div key={index} className="skill">
+              <img src={skill} alt={skill} />
             </div>
           ))}
         </div>

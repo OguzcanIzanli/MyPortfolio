@@ -1,2 +1,65 @@
-.react {
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+
+  .technology {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    color: #fff;
+  }
+
+  .react {
+    background: #58c4dc;
+  }
+
+  .typescript {
+    background: #377cc8;
+  }
+
+  .contextapi {
+    background: #c471ed;
+  }
+
+  .hooks {
+    background: #a04747;
+  }
+
+  .responsive {
+    background: linear-gradient(to right, #6c22bd, #f55195 50%, #e1cd60);
+  }
+
+  .reactrouter {
+    background: #f44250;
+  }
+
+  .materialui {
+    background: #0073e6;
+  }
+
+  .reactquery {
+    background: linear-gradient(to right, #f04842, #f59d0d);
+  }
+
+  .api {
+    background: #00712d;
+  }
+
+  .themetoggle {
+    background: linear-gradient(to right, #f7e025, #1c2f78);
+  }
+
+  .javascript {
+    background: #efd81d;
+  }
+
+  .bootstrap {
+    background: #6e2bf4;
+  }
 }

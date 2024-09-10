@@ -12,38 +12,41 @@ import IconThemeToggle from "../../assets/icons/Technologies/IconThemeToogle";
 import IconTypeScript from "../../assets/icons/Technologies/IconTypeScript";
 
 interface TechnologiesProps {
-  technology: string;
+  technologies: string[];
 }
 
-const Technologies: React.FC<TechnologiesProps> = ({ technology }) => {
-  switch (technology) {
-    case "React":
-      return <IconReact />;
-    case "API":
-      return <IconAPI />;
-    case "Bootstrap":
-      return <IconBootstrap />;
-    case "ContextAPI":
-      return <IconContextAPI />;
-    case "Hooks":
-      return <IconHooks />;
-    case "JavaScript":
-      return <IconJavascript />;
-    case "MaterialUI":
-      return <IconMaterialUi />;
-    case "Reactquery":
-      return <IconReactquery />;
-    case "Reactrouter":
-      return <IconReactrouter />;
-    case "Responsive":
-      return <IconResponsive />;
-    case "ThemeToggle":
-      return <IconThemeToggle />;
-    case "TypeScript":
-      return <IconTypeScript />;
-    default:
-      return null;
-  }
+const icons: { [key: string]: React.FC } = {
+  React: IconReact,
+  API: IconAPI,
+  Bootstrap: IconBootstrap,
+  ContextAPI: IconContextAPI,
+  Hooks: IconHooks,
+  JavaScript: IconJavascript,
+  MaterialUI: IconMaterialUi,
+  Reactquery: IconReactquery,
+  Reactrouter: IconReactrouter,
+  Responsive: IconResponsive,
+  ThemeToggle: IconThemeToggle,
+  TypeScript: IconTypeScript,
+};
+
+const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
+  return (
+    <div className="technologies">
+      {technologies.map((technology) => {
+        const IconComponent = icons[technology];
+        return (
+          <div
+            key={technology}
+            className={`technology ${technology.toLowerCase()}`}
+          >
+            {IconComponent && <IconComponent />}
+            {technology}
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Technologies;
