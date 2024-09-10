@@ -1,7 +1,6 @@
 @use "../base/colors" as *;
 
 // THEME TOGGLE
-// Navbar
 $themes: (
   light: (
     color: $white,
@@ -18,6 +17,7 @@ $themes: (
     backdrop-filter: blur(10px),
   ),
 );
+// Navbar
 
 @mixin apply-bg-theme($theme-name) {
   $theme: map-get($themes, $theme-name);
@@ -31,14 +31,48 @@ $themes: (
   backdrop-filter: map-get($theme, backdrop-filter);
 }
 
-.light-nav {
-  @include apply-nav-theme("light");
+// Home Background
+$rainbow-gradient: repeating-linear-gradient(
+  100deg,
+  $base-color-1 10%,
+  $base-color-2 15%,
+  $base-color-1 20%,
+  $base-color-3 25%,
+  $base-color-1 30%
+);
+
+@mixin animated-background($theme-name) {
+  $theme: map-get($themes, $theme-name);
+  filter: map-get($theme, filter);
+
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  $lines: repeating-linear-gradient(
+    100deg,
+    map-get($theme, color) 0%,
+    map-get($theme, color) 7%,
+    transparent 10%,
+    transparent 12%,
+    map-get($theme, color) 16%
+  );
+
+  background-image: $lines, $rainbow-gradient;
+  background-size: 300%, 200%;
+  mask-image: radial-gradient(ellipse at 100% 0%, $dark-1 40%, transparent 70%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: $lines, $rainbow-gradient;
+    background-size: 200%, 100%;
+    animation: smooth-bg 60s linear infinite;
+    mix-blend-mode: difference;
+  }
 }
 
-.dark-nav {
-  @include apply-nav-theme("dark");
-}
-
+// Theme Classes
 .light-bg {
   @include apply-bg-theme("light");
 }
@@ -46,7 +80,6 @@ $themes: (
 .dark-bg {
   @include apply-bg-theme("dark");
 }
-
 // MEDIA
 $breakpoints: (
   "xs": (

@@ -152,6 +152,14 @@
   }
 }
 
+.light-nav {
+  @include apply-nav-theme("light");
+}
+
+.dark-nav {
+  @include apply-nav-theme("dark");
+}
+
 .construction {
   margin-left: 10px;
   padding: 0 8px;
