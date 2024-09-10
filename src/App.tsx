@@ -4,6 +4,7 @@ import Hero from "./layouts/Hero";
 import About from "./layouts/About";
 import Projects from "./layouts/Projects";
 import Contact from "./layouts/Contact";
+import Footer from "./layouts/Footer";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
-      <Contact />
+      {/* <Projects /> */}
+      {/* <Contact /> */}
+      <Footer />
     </>
   );
 }

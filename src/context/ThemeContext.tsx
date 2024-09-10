@@ -6,25 +6,26 @@ import {
   ReactNode,
 } from "react";
 
-export type ThemeContextInterface = {
-  theme: string;
-  setTheme: (theme: string) => void;
-};
+interface ThemeContextInterface {
+  theme: boolean;
+  setTheme: (theme: boolean) => void;
+}
 
-export type ThemeProviderProps = {
+interface ThemeProviderProps {
   children: ReactNode;
-};
+}
 
 const ThemeContext = createContext<ThemeContextInterface>({
-  theme: "light",
+  theme: true,
   setTheme: () => {},
 });
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const storedTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(storedTheme === "false" ? false : true);
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
+    localStorage.setItem("theme", theme.toString());
   }, [theme]);
 
   const values = {

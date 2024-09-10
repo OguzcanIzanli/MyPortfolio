@@ -2,44 +2,86 @@ import Logo from "../Logo";
 import { useTheme } from "../../context/ThemeContext";
 import IconLight from "../../assets/icons/IconLight";
 import IconDark from "../../assets/icons/IconDark";
+import IconClose from "../../assets/icons/IconClose";
+import IconMenu from "../../assets/icons/IconMenu";
+import { useEffect, useState } from "react";
 
 const menuItems = [
-  { text: "Home", color: "#60a5fa" },
-  { text: "About", color: "#e879f9" },
-  { text: "Projects", color: "#5eead4" },
-  { text: "Contact", color: "#ffdd1c" },
+  { text: "Home", color: "#12c2e9" },
+  { text: "About", color: "#8a90ff" },
+  { text: "Projects", color: "#e55dcb" },
+  { text: "Contact", color: "#f64f59" },
 ];
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
+  const [navbarOpen, setNavbarOpen] = useState(true);
+  const [expandNavbar, setExpandNavbar] = useState("");
+
+  // Navbar Page Scroll Event
+  document.addEventListener("scroll", () => {
+    window.scrollY > 50
+      ? setExpandNavbar("expand-navbar")
+      : setExpandNavbar("");
+
+    setNavbarOpen(true);
+  });
+
+  // Smooth scroll transition between sections on the page
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+
+    const sectionId = event.currentTarget.getAttribute("href");
+
+    if (sectionId) {
+      document
+        .querySelector(sectionId)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  // Close the dropdown menu when click the document except navbar
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      if (e.clientY > 195) {
+        setNavbarOpen(true);
+      }
+    });
+  }, []);
 
   return (
-    <div className="containerNavbar">
-      <div className={`navbar ${theme === "light" ? "lightNav" : "darkNav"}`}>
-        <div className="logo">
+    <div className={`navbar-container ${expandNavbar}`}>
+      <div className={`navbar ${theme ? "light-nav" : "dark-nav"}`}>
+        <a href="home" className="logo">
           <Logo size={1.5} zIndex={1} />
           <div className="construction">Under construction!</div>
-        </div>
-        <ul className="navBtns">
+        </a>
+
+        <ul className={`nav-btns ${navbarOpen ? "menu-close" : "menu-open"}`}>
           <div
-            style={{ color: theme === "light" ? "#fff" : "#ffdd1c" }}
-            className="themeBtn"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            style={{ color: theme ? "#fff" : "#ffdd1c" }}
+            className="theme-btn"
+            onClick={() => setTheme(!theme)}
           >
-            {theme === "light" ? <IconDark /> : <IconLight />}
+            {theme ? <IconLight /> : <IconDark />}
           </div>
+
           {menuItems.map((item, index) => (
             <li
               key={index}
               style={
-                { "--clr": item.color, "--delay": index } as React.CSSProperties
+                {
+                  "--color": item.color,
+                  "--delay": index,
+                } as React.CSSProperties
               }
             >
               <a
-                className={`navBtn ${
-                  theme === "light" ? "lightNavBtn" : "darkNavBtn"
-                }`}
-                href="#"
+                className="nav-btn"
+                onClick={handleClick}
+                href={`#${item.text.toLowerCase()}`}
                 data-text={`${item.text}`}
               >
                 {item.text}
@@ -47,6 +89,12 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <button
+          className="dropdown-menu-btn"
+          onClick={() => setNavbarOpen(!navbarOpen)}
+        >
+          {navbarOpen ? <IconMenu /> : <IconClose />}
+        </button>
       </div>
     </div>
   );

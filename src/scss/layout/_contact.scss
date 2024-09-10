@@ -1,9 +1,31 @@
 @use "../base/colors" as *;
 
+#contact {
+  padding: 80px 20%;
+  // background-color: $base-color-5;
+}
+
 .contactContainer {
-  padding: 80px 10%;
+  background: $base-color-5;
+  padding: 64px 96px;
+  border-radius: 24px;
+  position: relative;
+  z-index: 3;
   display: flex;
-  align-items: center;
-  background-color: $base-color-5;
-  flex-direction: column;
+  gap: 20%;
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 40%;
+  }
+
+  .contact-right {
+  }
 }

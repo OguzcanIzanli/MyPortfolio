@@ -23,8 +23,6 @@ $themes: (
 @mixin backgroundPrimary($theme-name) {
   $theme: map-get($themes, $theme-name);
   background-color: map-get($theme, color);
-
-  // position: relative;
 }
 
 @mixin animatedBackground($theme-name) {
