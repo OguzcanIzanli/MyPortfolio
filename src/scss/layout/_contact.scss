@@ -1,31 +1,215 @@
 @use "../base/colors" as *;
+@use "../abstracts/mixins" as *;
 
-#contact {
-  padding: 80px 20%;
-  // background-color: $base-color-5;
+.contact-container {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 100px 0;
+
+  .contact-title {
+    margin-bottom: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 1px;
+    color: $base-color-4;
+    font-family: "Mochiy Pop One", sans-serif;
+    border-bottom: 2px solid $base-color-4;
+  }
+
+  .contact {
+    background-image: linear-gradient(45deg, #12c2e9, #c471ed 50%, #f64f59);
+    filter: drop-shadow(0 0 10px $dark-1);
+    padding: 64px 0;
+    border-radius: 24px;
+    // position: relative;
+    // z-index: 3;
+    display: flex;
+    color: $dark-1;
+
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .contact-left,
+    .contact-right {
+      width: 50%;
+      position: relative;
+    }
+
+    .contact-left {
+      padding: 0 65px;
+
+      p {
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .mail-whatsapp,
+      .links {
+        display: flex;
+        margin: 16px 0;
+        gap: 8px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .mail-whatsapp {
+        flex-direction: column;
+        .mail,
+        .whatsapp {
+          display: flex;
+          align-items: center;
+
+          gap: 12px;
+          color: $dark-1;
+        }
+
+        .mail:active,
+        .whatsapp:active {
+          filter: brightness(1.25);
+        }
+
+        .mail .iconMail {
+          font-size: 24px;
+        }
+
+        .whatsapp .iconWhatsapp {
+          color: #25d366;
+          font-size: 24px;
+        }
+      }
+
+      .social-links {
+        margin-top: 24px;
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .links {
+          gap: 16px;
+          a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            border-radius: 50%;
+            border: 2px solid;
+            transition: 0.3s ease;
+            color: $dark-1;
+            cursor: pointer;
+
+            &.gitHub:hover {
+              color: $white;
+              background-color: $dark-1;
+              box-shadow: 0 0 20px $base-color-1;
+            }
+
+            &.linkedIn:hover {
+              color: $white;
+              background-color: #0a66c2;
+              box-shadow: 0 0 20px $base-color-1;
+            }
+
+            &:active {
+              filter: brightness(1.25);
+            }
+          }
+        }
+      }
+    }
+
+    .contact-left::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: $dark-1;
+      filter: drop-shadow(0 0 10px $dark-1);
+      height: 100%;
+    }
+
+    .contact-right {
+      text-align: center;
+      align-content: center;
+      h2 {
+        font-size: 44px;
+        margin-bottom: 24px;
+      }
+
+      h3 {
+        font-size: 32px;
+      }
+    }
+  }
 }
 
-.contactContainer {
-  background: $base-color-5;
-  padding: 64px 96px;
-  border-radius: 24px;
-  position: relative;
-  z-index: 3;
-  display: flex;
-  gap: 20%;
-
-  .logo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@include breakpoint(lg) {
+  .contact-container {
+    width: 90%;
   }
+}
 
-  .contact-left,
-  .contact-right {
-    width: 40%;
+@include breakpoint(md) {
+  .contact-container {
+    .contact {
+      flex-direction: column-reverse;
+      padding-right: 65px;
+      padding-left: 65px;
+
+      .contact-left,
+      .contact-right {
+        width: 100%;
+        padding: 0;
+      }
+
+      .contact-left::before {
+        width: 0;
+      }
+
+      .contact-right {
+        margin-bottom: 48px;
+        padding-bottom: 16px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          background-color: $dark-1;
+          filter: drop-shadow(0 0 10px $dark-1);
+          width: 100%;
+        }
+      }
+    }
   }
+}
 
-  .contact-right {
+@include breakpoint(xs) {
+  .contact-container {
+    .contact {
+      padding-right: 24px;
+      padding-left: 24px;
+
+      .contact-right {
+        h2 {
+          font-size: 36px;
+          margin-bottom: 24px;
+        }
+
+        h3 {
+          font-size: 28px;
+        }
+      }
+    }
   }
 }
