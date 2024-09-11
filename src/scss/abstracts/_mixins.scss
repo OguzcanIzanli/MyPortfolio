@@ -17,8 +17,8 @@ $themes: (
     backdrop-filter: blur(10px),
   ),
 );
-// Navbar
 
+// Navbar Theme Toggle
 @mixin apply-bg-theme($theme-name) {
   $theme: map-get($themes, $theme-name);
   background-color: map-get($theme, color);
@@ -31,7 +31,7 @@ $themes: (
   backdrop-filter: map-get($theme, backdrop-filter);
 }
 
-// Home Background
+// Home Background Theme Toggle
 $rainbow-gradient: repeating-linear-gradient(
   100deg,
   $base-color-1 10%,
@@ -80,7 +80,8 @@ $rainbow-gradient: repeating-linear-gradient(
 .dark-bg {
   @include apply-bg-theme("dark");
 }
-// MEDIA
+
+// MEDIA BREAKPOINTS
 $breakpoints: (
   "xs": (
     "max-width: 576px",
@@ -98,7 +99,7 @@ $breakpoints: (
     "max-width: 1400px",
   ),
   "xxl": (
-    "max-width >= 1400px",
+    "min-width: 1400px",
   ),
 );
 
@@ -108,5 +109,69 @@ $breakpoints: (
     @media (#{$breakpoint-map}) {
       @content;
     }
+  }
+}
+
+// Projects Media
+@mixin responsive-card(
+  $card-width,
+  $card-title-font-size,
+  $face-title-height,
+  $content-margin,
+  $content-font-size,
+  $content-padding
+) {
+  .card-container {
+    .project-card {
+      width: $card-width;
+      .face {
+        width: $card-width;
+        height: calc($card-width/2);
+      }
+
+      .face.face-title {
+        font-size: $card-title-font-size;
+      }
+
+      &:hover .face-title {
+        transform: translateY(calc(-1 * $face-title-height - $card-width/4));
+        height: $face-title-height;
+      }
+
+      .face.face-down {
+        .content {
+          font-size: $content-font-size;
+          padding: $content-padding;
+          p {
+            margin: $content-margin 0;
+          }
+        }
+      }
+
+      &:hover .face-down {
+        transform: translateY(calc($card-width/4));
+      }
+    }
+
+    // Positioning
+    .left {
+      left: calc(50% - $card-width - 40px);
+    }
+
+    .right {
+      left: calc(50% + 40px);
+    }
+  }
+
+  .show-less {
+    height: calc($card-width + 50px);
+
+    .project-card:not(:nth-child(1), :nth-child(2)) {
+      transform: translateY(300px);
+    }
+  }
+
+  .show-more {
+    height: calc($card-width * 4);
   }
 }

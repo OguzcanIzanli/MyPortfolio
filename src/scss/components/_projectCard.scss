@@ -1,31 +1,39 @@
 @use "../base/colors" as *;
 @use "../abstracts/mixins" as *;
 
+// Variables
+$card-width: 500px;
+$card-height: calc($card-width/2);
+$translateY-face-down: calc($card-width/4);
+$card-title-font-size: 28px;
+$face-title-height: 50px;
+
+$content-padding: 16px;
+$content-font-size: 16px;
+$content-margin: 16px;
+
+$link-width: 40%;
+$link-gap: 40px;
+
 .card-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   width: 100%;
-  margin: 175px 0 130px 0;
   transition: all 3s;
+  margin: 180px 0 40px 0;
+  position: relative;
 
   .project-card {
     position: relative;
-    width: 500px;
+    width: $card-width;
     aspect-ratio: 2;
-    margin-bottom: 100px;
     transition: all 3s;
 
-    &:hover {
-      z-index: 3;
-    }
-
+    // Face title
     .face {
       position: absolute;
       display: flex;
       align-items: center;
-      width: 100%;
-      aspect-ratio: 2;
+      width: $card-width;
+      height: $card-height;
       transition: 0.3s;
     }
 
@@ -34,9 +42,8 @@
       background: rgba(22, 21, 37, 0.5);
       backdrop-filter: blur(1px);
       z-index: 2;
-      height: 250px;
       border-radius: 8px;
-      font-size: 28px;
+      font-size: $card-title-font-size;
       transform: translateY(0);
 
       .project-name {
@@ -49,10 +56,11 @@
       }
     }
 
-    &:hover .face.face-title {
-      transform: translateY(-175px);
-      height: 50px;
-      align-items: center;
+    &:hover .face-title {
+      transform: translateY(
+        calc(calc(-1 * $face-title-height - $card-width/4))
+      );
+      height: $face-title-height;
       border-radius: 8px 8px 0 0;
       background-color: var(--color);
       color: $dark-1;
@@ -62,6 +70,7 @@
       }
     }
 
+    // Face up
     .face.face-up {
       z-index: 1;
       transform: translateY(0);
@@ -74,14 +83,15 @@
       }
     }
 
-    &:hover .face.face-up {
+    &:hover .face-up {
       transform: translateY(-50%);
     }
 
-    &:hover .face.face-up .project-image {
+    &:hover .face-up .project-image {
       border-radius: 0;
     }
 
+    // Face down
     .face.face-down {
       background: var(--color);
       border-radius: 8px;
@@ -93,22 +103,23 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 16px;
+        padding: $content-padding;
+        font-size: $content-font-size;
 
         p {
           text-align: justify;
-          font-size: 15px;
           color: $dark-1;
+          margin: $content-margin 0;
         }
 
         .project-links {
           display: flex;
           justify-content: center;
-          gap: 40px;
-          margin-top: 16px;
+          gap: $link-gap;
 
           a {
-            width: 40%;
+            width: $link-width;
+
             background-image: linear-gradient(
               45deg,
               #12c2e9,
@@ -117,8 +128,7 @@
             );
             border-radius: 8px;
             box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-            color: $white;
-            font-size: 16px;
+            color: #fff;
             padding: 3px;
 
             span {
@@ -145,119 +155,205 @@
       }
     }
     &:hover .face-down {
-      transform: translateY(125px);
+      transform: translateY($translateY-face-down);
       aspect-ratio: 0;
       height: auto;
       border-radius: 0 0 8px 8px;
     }
   }
-}
 
-@include breakpoint(lg) {
-  .card-container {
-    margin: 145px 0 130px 0;
+  // Positioning
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(50% - 2px);
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #ccc;
+  }
 
-    .project-card {
-      width: 420px !important;
+  .project-card::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 15px;
+    background-color: $base-color-3;
+  }
 
-      .face.face-title {
-        font-size: 20px !important;
-        height: 210px;
-      }
+  .project-card.left::before {
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    right: -15px;
+  }
 
-      &:hover .face.face-title {
-        transform: translateY(-145px) !important;
-        height: 40px !important;
-      }
+  .project-card.right::before {
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    left: -15px;
+  }
 
-      .face.face-down {
-        .content {
-          padding: 10px !important;
+  .project-card::after {
+    content: "</>";
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    top: -2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $base-color-3;
+    border: 2px solid #fff;
+    filter: drop-shadow(0 0 3px $base-color-3);
+    color: #fff;
+    font-size: 16px;
+  }
 
-          .project-links {
-            margin-top: 8px !important;
-            a {
-              font-size: 14px !important;
-              width: 35% !important;
-            }
-          }
-        }
-      }
+  .project-card.left::after {
+    right: -60px;
+  }
 
-      &:hover .face-down {
-        transform: translateY(105px) !important;
-      }
-    }
+  .project-card.right::after {
+    left: -60px;
   }
 }
 
+// Media queries
+// (card-width, card-title-font-size, face-title-height, content-margin, content-font-size, content-padding)
+@include breakpoint(xxl) {
+  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px);
+}
+
+@include breakpoint(xl) {
+  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px);
+}
+
+@include breakpoint(lg) {
+  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px);
+}
+
 @include breakpoint(md) {
+  @include responsive-card(300px, 14px, 30px, 2px, 12px, 10px);
   .card-container {
-    width: 100%;
-    justify-content: center;
-    margin: 175px 0 130px 0;
+    margin: 120px 0 40px 0;
+  }
+}
+
+@include breakpoint(sm) {
+  @include responsive-card(500px, 24px, 30px, 16px, 16px, 16px);
+  .card-container {
+    margin: 200px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .project-card {
-      width: 500px !important;
+      position: static;
+      min-height: 650px;
 
-      .face.face-title {
-        height: 250px;
+      .face-title {
+        transform: translateY(
+          calc(calc(-1 * $face-title-height - $card-width/4))
+        ) !important;
+        height: $face-title-height !important;
+        border-radius: 8px 8px 0 0 !important;
+        background-color: var(--color) !important;
+
+        .project-name {
+          filter: none !important;
+        }
       }
 
-      &:hover .face.face-title {
-        transform: translateY(-175px) !important;
-        height: 50px !important;
+      .face-up {
+        transform: translateY(-50%) !important;
       }
 
-      &:hover .face-down {
-        transform: translateY(125px) !important;
+      .face-up .project-image {
+        border-radius: 0 !important;
+      }
+
+      .face-down {
+        transform: translateY($translateY-face-down) !important;
+        height: 320px !important;
+        border-radius: 0 0 8px 8px !important;
       }
     }
+
+    &::before,
+    .project-card::after,
+    .project-card::before {
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+  }
+  .show-less {
+    height: 370px;
+
+    .project-card:not(:first-child) {
+      transform: translateY(200px);
+    }
+  }
+
+  .show-more {
+    height: 4940px;
   }
 }
 
 @include breakpoint(xs) {
+  @include responsive-card(320px, 12px, 20px, 12px, 12px, 12px);
   .card-container {
-    width: 100%;
-    justify-content: center;
-    margin: 110px 0 90px 0;
+    margin: 130px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .project-card {
-      width: 320px !important;
-      height: 160px !important;
+      position: static;
+      min-height: 500px;
 
-      .face.face-title {
-        font-size: 14px !important;
-        height: 160px;
-      }
+      .face-title {
+        transform: translateY(-108px) !important;
+        height: 28px !important;
+        border-radius: 8px 8px 0 0 !important;
+        background-color: var(--color) !important;
 
-      &:hover .face.face-title {
-        transform: translateY(-110px) !important;
-        height: 30px !important;
-      }
-
-      .face.face-down {
-        .content {
-          padding: 6px !important;
-
-          p {
-            font-size: 12px;
-          }
-
-          .project-links {
-            margin-top: 4px !important;
-
-            a {
-              font-size: 10px !important;
-              width: 35% !important;
-            }
-          }
+        .project-name {
+          filter: none !important;
         }
       }
 
-      &:hover .face-down {
+      .face-up {
+        transform: translateY(-50%) !important;
+      }
+
+      .face-up .project-image {
+        border-radius: 0 !important;
+      }
+
+      .face-down {
         transform: translateY(80px) !important;
+        height: 280px !important;
+        border-radius: 0 0 8px 8px !important;
       }
     }
+
+    &::before,
+    .project-card::after,
+    .project-card::before {
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+  }
+  .show-less {
+    height: 370px;
+
+    .project-card:not(:first-child) {
+      transform: translateY(200px);
+    }
+  }
+
+  .show-more {
+    height: 3800px;
   }
 }

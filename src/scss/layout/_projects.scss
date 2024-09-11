@@ -24,6 +24,7 @@
     font-size: 64px;
     cursor: pointer;
     background-clip: text;
+    margin-top: 50px;
     animation: bounce 1.5s infinite;
     z-index: 5;
     mix-blend-mode: difference;
@@ -32,68 +33,24 @@
     svg {
       transition: 1s linear all;
     }
+
+    .rotate180deg {
+      transform: rotate(180deg);
+    }
   }
-}
-
-.card-showless {
-  height: 300px;
-
-  .project-card:not(:nth-child(1), :nth-child(2)) {
-    opacity: 0;
-  }
-}
-
-.card-showall {
-  height: 1250px;
-}
-
-.rotate180deg {
-  transform: rotate(180deg);
 }
 
 @include breakpoint(lg) {
   .projects-container {
     width: 90%;
   }
-
-  .card-showless {
-    height: 220px;
-
-    .project-card:not(:nth-child(1), :nth-child(2)) {
-      opacity: 0;
-    }
-  }
-
-  .card-showall {
-    height: 1120px;
-  }
-}
-
-@include breakpoint(md) {
-  .card-showless {
-    height: 235px;
-
-    .project-card:not(:nth-child(1)) {
-      opacity: 0;
-    }
-  }
-
-  .card-showall {
-    height: 2650px;
-  }
 }
 
 @include breakpoint(xs) {
-  .card-showless {
-    height: 200px;
-
-    .project-card:not(:nth-child(1)) {
-      opacity: 0;
+  .projects-container {
+    .projects-title {
+      font-size: 30px !important;
     }
-  }
-
-  .card-showall {
-    height: 2000px;
   }
 }
 
