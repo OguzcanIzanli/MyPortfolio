@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ viewProjects }) => {
           </div>
           <div
             style={{ "--color": project.color } as React.CSSProperties}
-            className="face-down"
+            className="face face-down"
           >
             <div className="content">
               <Technologies technologies={project.technologies} />

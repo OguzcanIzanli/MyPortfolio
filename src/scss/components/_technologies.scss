@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .technologies {
   display: flex;
   flex-wrap: wrap;
@@ -61,5 +63,21 @@
 
   .bootstrap {
     background: #6e2bf4;
+  }
+}
+
+@include breakpoint(lg) {
+  .technologies {
+    font-size: 12px;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+}
+
+@include breakpoint(xs) {
+  .technologies {
+    font-size: 9px;
+    gap: 4px;
+    margin-bottom: 4px;
   }
 }
