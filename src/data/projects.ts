@@ -14,7 +14,6 @@ const projects = [
       "Hooks",
       "Reactquery",
       "MaterialUI",
-      "Responsive",
       "Api",
     ],
   },
