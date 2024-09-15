@@ -1,0 +1,18 @@
+@use "../../scss/abstracts/mixins" as *;
+
+.dark-anim-bg {
+  @include animated-background(dark);
+}
+
+.light-anim-bg {
+  @include animated-background(light);
+}
+
+@keyframes smooth-bg {
+  0% {
+    background-position: 50% 50%, 50% 50%;
+  }
+  100% {
+    background-position: 350% 50%, 350% 50%;
+  }
+}

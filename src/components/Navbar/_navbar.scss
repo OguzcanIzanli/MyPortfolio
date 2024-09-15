@@ -1,6 +1,6 @@
-@use "../base/colors" as *;
-@use "../abstracts/animations";
-@use "../abstracts/mixins" as *;
+@use "../../scss/base/colors" as *;
+@use "../../scss/abstracts/animations";
+@use "../../scss/abstracts/mixins" as *;
 
 .navbar-container {
   width: 100%;
@@ -158,13 +158,4 @@
 
 .dark-nav {
   @include apply-nav-theme("dark");
-}
-
-.construction {
-  margin-left: 10px;
-  padding: 0 8px;
-  font-size: 1rem;
-  background-color: red;
-  color: white;
-  border-radius: 10px;
 }

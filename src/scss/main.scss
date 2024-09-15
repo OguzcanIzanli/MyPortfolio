@@ -1,14 +1,13 @@
 @use "./base/reset";
-@use "./base/colors" as *;
 
-@use "./components/background";
-@use "./components/logo";
-@use "./components/navbar";
-@use "./components/technologies";
-@use "./components/projectCard";
+@use "../components/Logo/logo";
+@use "../components/Navbar/navbar";
+@use "../components/ProjectCard/projectCard";
+@use "../components/Technologies/technologies";
 
-@use "./layout/hero";
-@use "./layout/about";
-@use "./layout/projects";
-@use "./layout/contact";
-@use "./layout/footer";
+@use "../layouts/Hero/background";
+@use "../layouts/Hero/hero";
+@use "../layouts/About/about";
+@use "../layouts/Projects/projects";
+@use "../layouts/Contact/contact";
+@use "../layouts/Footer/footer";
