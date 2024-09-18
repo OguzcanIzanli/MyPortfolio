@@ -18,6 +18,8 @@ $link-gap: 40px;
 .projects-loading {
   font-size: 32px;
   margin-top: 40px;
+  mix-blend-mode: difference;
+  filter: invert(1);
 }
 
 .card-container {
