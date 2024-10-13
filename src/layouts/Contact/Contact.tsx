@@ -9,7 +9,10 @@ const Contact = () => {
   const { theme } = useTheme();
 
   return (
-    <div id="contact" className={`${theme ? "light-bg" : "dark-bg"}`}>
+    <div
+      id="contact"
+      className={`${theme === "light" ? "light-bg" : "dark-bg"}`}
+    >
       <div className="contact-container">
         <h1 className="contact-title">Contact Me</h1>
 

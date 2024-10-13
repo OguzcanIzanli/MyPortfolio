@@ -53,18 +53,18 @@ const Navbar = () => {
 
   return (
     <div className={`navbar-container ${expandNavbar}`}>
-      <div className={`navbar ${theme ? "light-nav" : "dark-nav"}`}>
+      <div className={`navbar ${theme === "light" ? "light-nav" : "dark-nav"}`}>
         <a href="#home" className="logo">
           <Logo size={1.5} zIndex={1} />
         </a>
 
         <ul className={`nav-btns ${navbarOpen ? "menu-close" : "menu-open"}`}>
           <div
-            style={{ color: theme ? "#fff" : "#ffdd1c" }}
+            style={{ color: theme === "light" ? "#fff" : "#ffdd1c" }}
             className="theme-btn"
-            onClick={() => setTheme(!theme)}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            {theme ? <IconLight /> : <IconDark />}
+            {theme === "light" ? <IconLight /> : <IconDark />}
           </div>
 
           {menuItems.map((item, index) => (

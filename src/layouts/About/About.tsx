@@ -26,7 +26,7 @@ const About = () => {
   const { theme } = useTheme();
 
   return (
-    <div id="about" className={`${theme ? "light-bg" : "dark-bg"}`}>
+    <div id="about" className={`${theme === "light" ? "light-bg" : "dark-bg"}`}>
       <div className="about-container">
         <h1 className="about-title">About Me</h1>
         <div className="about-content">

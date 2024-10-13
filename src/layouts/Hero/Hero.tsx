@@ -7,8 +7,10 @@ const Hero = () => {
   const { theme } = useTheme();
 
   return (
-    <div id="home" className={`${theme ? "light-bg" : "dark-bg"}`}>
-      <div className={`${theme ? "light-anim-bg" : "dark-anim-bg"}`}></div>
+    <div id="home" className={`${theme === "light" ? "light-bg" : "dark-bg"}`}>
+      <div
+        className={`${theme === "light" ? "light-anim-bg" : "dark-anim-bg"}`}
+      ></div>
 
       <div className="hero-container">
         <h3>Hello!</h3>

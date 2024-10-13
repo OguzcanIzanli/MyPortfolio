@@ -7,8 +7,8 @@ import {
 } from "react";
 
 interface ThemeContextInterface {
-  theme: boolean;
-  setTheme: (theme: boolean) => void;
+  theme: string;
+  setTheme: (theme: string) => void;
 }
 
 interface ThemeProviderProps {
@@ -16,16 +16,16 @@ interface ThemeProviderProps {
 }
 
 const ThemeContext = createContext<ThemeContextInterface>({
-  theme: true,
+  theme: "light",
   setTheme: () => {},
 });
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const storedTheme = localStorage.getItem("theme");
-  const [theme, setTheme] = useState(storedTheme === "false" ? false : true);
+  const [theme, setTheme] = useState(storedTheme ? storedTheme : "light");
 
   useEffect(() => {
-    localStorage.setItem("theme", theme.toString());
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const values = {

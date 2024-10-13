@@ -8,7 +8,10 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div id="projects" className={`${theme ? "light-bg" : "dark-bg"}`}>
+    <div
+      id="projects"
+      className={`${theme === "light" ? "light-bg" : "dark-bg"}`}
+    >
       <div className="projects-container">
         <h1 className="projects-title">Projects</h1>
         <ProjectCard showMore={showMore} />
