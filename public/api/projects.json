@@ -1,7 +1,7 @@
 [
   {
     "name": "Modal Generator",
-    "description": "A simple and powerful tool for creating and customizing modals effortlessly! This project uses modern web technologies to give users a smooth and easy way to build, configure, and embed modals on any website. Below is a quick overview of the project, its features, and how you can use it to create your own modals.",
+    "description": "A simple and powerful tool for creating and customizing modals effortlessly! This project uses modern web technologies to give users a smooth and easy way to build, configure, and embed modals on any website.",
     "live": "https://modal-generator.netlify.app/",
     "github": "https://github.com/OguzcanIzanli/Modal-Generator",
     "media": "url(/projects/modal-generator.png)",
