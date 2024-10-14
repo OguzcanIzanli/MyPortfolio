@@ -7,6 +7,7 @@ import SASS from "../../assets/images/skills/sass.svg";
 import Tailwind from "../../assets/images/skills/tailwindcss.svg";
 import Bootstrap from "../../assets/images/skills/bootstrap.svg";
 import Git from "../../assets/images/skills/git.svg";
+import Nextjs from "../../assets/images/skills/nextjs.svg";
 import ProfileImg from "../../assets/images/profile-image.png";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -17,6 +18,7 @@ const About = () => {
     JavaScript,
     TypeScript,
     React,
+    Nextjs,
     SASS,
     Tailwind,
     Bootstrap,
@@ -38,14 +40,14 @@ const About = () => {
               With a solid background in chemical engineering and strong skills
               in front-end development, I am determined to succeed in this
               field. Skilled in <strong>HTML</strong>, <strong>CSS</strong>,{" "}
-              <strong>JavaScript</strong>, <strong>TypeScript</strong>, and{" "}
-              <strong>React</strong>, I am prepared to face new challenges. My
-              previous experience has improved my project management and
-              teamwork abilities, providing a strong foundation for success in
-              my new career. With a passion for creating engaging user
-              experiences, I am excited to leverage my diverse background and
-              technical skills to contribute meaningfully to front-end
-              development projects.
+              <strong>JavaScript</strong>, <strong>TypeScript</strong>,{" "}
+              <strong>React</strong>, and <strong>Next.js</strong> I am prepared
+              to face new challenges. My previous experience has improved my
+              project management and teamwork abilities, providing a strong
+              foundation for success in my new career. With a passion for
+              creating engaging user experiences, I am excited to leverage my
+              diverse background and technical skills to contribute meaningfully
+              to front-end development projects.
             </p>
           </div>
         </div>

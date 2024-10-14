@@ -63,6 +63,30 @@
   .bootstrap {
     background: #6e2bf4;
   }
+
+  .nextjs {
+    background: #004ee6;
+  }
+
+  .webpack {
+    background: #8ed6fb;
+  }
+
+  .webhook {
+    background: linear-gradient(to right, #6d00cc, #b37ce2);
+  }
+
+  .firebase {
+    background: linear-gradient(to right, #dd2c00, #ffc400);
+  }
+
+  .sass {
+    background: #cf649a;
+  }
+
+  .tailwind {
+    background: #38bdf8;
+  }
 }
 
 @include breakpoint(lg) {

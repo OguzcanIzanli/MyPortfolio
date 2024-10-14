@@ -1,5 +1,23 @@
 [
   {
+    "name": "Modal Generator",
+    "description": "A simple and powerful tool for creating and customizing modals effortlessly! This project uses modern web technologies to give users a smooth and easy way to build, configure, and embed modals on any website. Below is a quick overview of the project, its features, and how you can use it to create your own modals.",
+    "live": "https://modal-generator.netlify.app/",
+    "github": "https://github.com/OguzcanIzanli/Modal-Generator",
+    "media": "url(/projects/modal-generator.png)",
+    "color": "#fbeaff",
+    "technologies": [
+      "Nextjs",
+      "TypeScript",
+      "Tailwind",
+      "Sass",
+      "Webpack",
+      "Webhook",
+      "Firebase",
+      "ContextAPI"
+    ]
+  },
+  {
     "name": "Veterinary Management System",
     "description": "This project is a management system developed for a veterinary clinic. The system allows performing CRUD (Create, Read, Update, Delete) operations with a live backend and database for animals, customers, doctors, appointments, reports, and vaccines.",
     "live": "https://myveterinaryapp.netlify.app/",

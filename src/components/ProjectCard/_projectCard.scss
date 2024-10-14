@@ -2,6 +2,7 @@
 @use "../../scss/abstracts/mixins" as *;
 
 // Variables
+$card-number: 9;
 $card-width: 500px;
 $card-height: calc($card-width/2);
 $translateY-face-down: calc($card-width/4);
@@ -31,7 +32,7 @@ $link-gap: 40px;
   .project-card {
     position: relative;
     width: $card-width;
-    aspect-ratio: 2;
+    aspect-ratio: 1.8;
     transition: all 3s;
 
     // Face title
@@ -227,26 +228,26 @@ $link-gap: 40px;
 // Media queries
 // (card-width, card-title-font-size, face-title-height, content-margin, content-font-size, content-padding)
 @include breakpoint(xxl) {
-  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px);
+  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px, $card-number);
 }
 
 @include breakpoint(xl) {
-  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px);
+  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px, $card-number);
 }
 
 @include breakpoint(lg) {
-  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px);
+  @include responsive-card(400px, 22px, 50px, 8px, 14px, 12px, $card-number);
 }
 
 @include breakpoint(md) {
-  @include responsive-card(300px, 14px, 30px, 2px, 12px, 10px);
+  @include responsive-card(300px, 14px, 30px, 2px, 12px, 10px, $card-number);
   .card-container {
     margin: 120px 0 40px 0;
   }
 }
 
 @include breakpoint(sm) {
-  @include responsive-card(500px, 24px, 30px, 16px, 16px, 16px);
+  @include responsive-card(500px, 24px, 30px, 16px, 16px, 16px, $card-number);
   .card-container {
     margin: 200px 0 40px 0;
     display: flex;
@@ -302,12 +303,12 @@ $link-gap: 40px;
   }
 
   .show-more {
-    height: 4940px;
+    height: calc(620px * $card-number);
   }
 }
 
 @include breakpoint(xs) {
-  @include responsive-card(320px, 12px, 20px, 12px, 12px, 12px);
+  @include responsive-card(320px, 12px, 20px, 12px, 12px, 12px, $card-number);
   .card-container {
     margin: 130px 0 40px 0;
     display: flex;
@@ -362,6 +363,6 @@ $link-gap: 40px;
   }
 
   .show-more {
-    height: 3800px;
+    height: calc(475px * $card-number);
   }
 }

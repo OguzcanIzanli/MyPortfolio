@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
 
           <a
-            href="https://drive.google.com/file/d/1KVEPIcgQ4inm5iRI8bWx9EJJSIQOmT5v/view"
+            href="https://drive.google.com/file/d/1h-wq3SRs--ONPYPg2OW7UuUeKU9Z01N8/view?usp=sharing"
             rel="noopener noreferrer"
             target="_blank"
             className="resume"
