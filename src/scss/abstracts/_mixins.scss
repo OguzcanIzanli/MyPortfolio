@@ -67,7 +67,7 @@ $rainbow-gradient: repeating-linear-gradient(
     inset: 0;
     background-image: $lines, $rainbow-gradient;
     background-size: 200%, 100%;
-    animation: smooth-bg 60s linear infinite;
+    // animation: smooth-bg 60s linear infinite;
     mix-blend-mode: difference;
   }
 }
